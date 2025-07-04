@@ -16,6 +16,7 @@ import com.mydating.dating.dao.UserDao;
 import com.mydating.dating.dto.MatchingUser;
 import com.mydating.dating.entity.User;
 import com.mydating.dating.utility.UserGender;
+import com.mydating.dating.utility.*;
 
 @Service
 public class UserService {
@@ -87,8 +88,8 @@ public class UserService {
 		mu.setMic(mic);
 		matchingUsers.add(mu);
 	}
-//	Comparator<MatchingUser> c =new UserSorting();
-//	Collections.sort(matchingUsers, c);
+	Comparator<MatchingUser> c =new UserSorting();
+	Collections.sort(matchingUsers, c);
 	List<MatchingUser> result = new ArrayList<>();
 	for (MatchingUser mu : matchingUsers) {
 		if (top == 0) {
